@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask import render_template, request, flash
 
 from .forms import LoginForm, RegisterForm
-from .models import User
+from .models import Ship
 
 page = Blueprint('page', __name__)
 
@@ -28,7 +28,7 @@ def signup():
     form = RegisterForm(request.form)
 
     if request.method == 'POST' and form.validate():
-        user = User.create_user(
+        ship = Ship.create_user(
             form.username.data,
             form.password.data,
             form.email.data

@@ -10,7 +10,7 @@ bootstrap = Bootstrap()
 #csrf = CSRFProtect()
 
 from .views import page
-from .models import User
+from .models import Ship
 
 def create_app(environment):
     app.config.from_object(environment)
