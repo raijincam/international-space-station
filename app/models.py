@@ -57,9 +57,19 @@ class combustibles(db.Model):
     options = db.Column(db.String(255), nullable=False)
     #user_id = db.Column(db.Integer, db.ForeignKey('ship.id'), nullable=False)
 
+class combustibles_schema:
+    class meta:
+        model = combustibles
+        sqla_session = db.session
 
 class country(db.Model):
     __tablename__ = 'countries'
 
     id = db.Column(db.Integer, primary_key=True)
     options = db.Column(db.String(255), nullable=False)
+
+
+class country_schema:
+    class meta:
+        model = country
+        sqla_session = db.session
